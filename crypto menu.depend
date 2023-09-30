@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1693373633 source:e:\crypto menu\main.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<vector>
+	"Cryptobook.h"
+	"MerkelMain.h"
+
+1693164085 source:e:\crypto menu\orderbook.cpp
+	"Cryptobook.h"
+
+1693268519 e:\crypto menu\cryptobook.h
+	<string>
+
+1693269219 e:\crypto menu\merkelmain.h
+	<vector>
+	"Cryptobook.h"
+
+1693268572 source:e:\crypto menu\merkelmain.cpp
+	"MerkelMain.h"
+	"Cryptobook.h"
+	<iostream>
+	<string>
+	<vector>
+
