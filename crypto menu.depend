@@ -1,26 +1,43 @@
 # depslib dependency file v1.0
-1693373633 source:e:\crypto menu\main.cpp
+1702966079 source:e:\crypto menu\main.cpp
 	<iostream>
-	<string>
-	<iomanip>
 	<vector>
 	"Cryptobook.h"
 	"MerkelMain.h"
+	"CSVReader.h"
 
-1693164085 source:e:\crypto menu\orderbook.cpp
+1702948574 source:e:\crypto menu\orderbook.cpp
 	"Cryptobook.h"
 
-1693268519 e:\crypto menu\cryptobook.h
+1702948574 e:\crypto menu\cryptobook.h
 	<string>
 
-1693269219 e:\crypto menu\merkelmain.h
+1702948487 e:\crypto menu\merkelmain.h
 	<vector>
 	"Cryptobook.h"
 
-1693268572 source:e:\crypto menu\merkelmain.cpp
+1703001799 source:e:\crypto menu\merkelmain.cpp
 	"MerkelMain.h"
 	"Cryptobook.h"
 	<iostream>
 	<string>
 	<vector>
+	"CSVReader.h"
+
+1702948487 e:\crypto menu\csvreader.h
+	"Cryptobook.h"
+	<vector>
+	<string>
+
+1702934236 source:e:\crypto menu\test.cpp
+	<string>
+	<vector>
+	<iostream>
+	<fstream>
+	<stdexcept>
+
+1702948487 source:e:\crypto menu\csvreader.cpp
+	"CSVReader.h"
+	<iostream>
+	<fstream>
 

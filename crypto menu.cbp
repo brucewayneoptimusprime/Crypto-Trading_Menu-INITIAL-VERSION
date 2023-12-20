@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CSVReader.cpp" />
+		<Unit filename="CSVReader.h" />
 		<Unit filename="Cryptobook.h" />
 		<Unit filename="MerkelMain.cpp" />
 		<Unit filename="MerkelMain.h" />

@@ -1,19 +1,16 @@
-#include <iostream>    // Header file for standard input and output//
-#include <string>    //String header file//
-#include <iomanip>     // Header file for precision and other functions//
+#include <iostream>
 #include <vector>
 #include "Cryptobook.h"
 #include "MerkelMain.h"
-using namespace std;
+#include "CSVReader.h"
 
+int main()
+{
+    CSVReader reader;
+    std::vector<Cryptobook> entries = reader.readCSV("20223.csv");
 
+      MerkelMain app{};
+      app.init();
 
-  int main()
-  {
-   MerkelMain app{};
-   app.init();
-   return 0;
-  }
-
-
-
+    return 0;
+}

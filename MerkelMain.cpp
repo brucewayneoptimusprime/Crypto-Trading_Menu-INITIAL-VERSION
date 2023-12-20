@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "CSVReader.h"
 using namespace std;
 
 
@@ -25,31 +26,11 @@ void MerkelMain::init()
 
 void MerkelMain::LoadOrderBook()
 {
-
-
-   orders.push_back(Cryptobook{0.02187163,0.03322569,"2020/03/17 17:01:24.884492","ETH/BTC",Typeoforder::bid}         ); //Storing data//
-   orders.push_back(Cryptobook{0.02187008,0.21,"2020/03/17 17:01:24.884492","ETH/BTC",Typeoforder::bid}               );
-   orders.push_back(Cryptobook{157647,0.00158102,"2020/03/17 17:01:55.120438","DOGE/USDT",Typeoforder::bid}           );
-   orders.push_back(Cryptobook{1940.00219867,0.00154639,"2020/03/17 17:01:55.120438","DOGE/USDT",Typeoforder::bid}    );
-   orders.push_back(Cryptobook{7413.21162129,0.00147901,"2020/03/17 17:01:55.120438","DOGE/USDT",Typeoforder::bid}    );
-   orders.push_back(Cryptobook{1972.551,0.00145374,"2020/03/17 17:01:55.120438","DOGE/USDT",Typeoforder::bid}         );
-   orders.push_back(Cryptobook{212011.13765176,0.00141502,"2020/03/17 17:01:55.120438","DOGE/USDT",Typeoforder::bid}  );
-
-
-   for(unsigned int i = 0; i < orders.size() ; ++i)                                        //Iteration//
-   {cout << "Money in the order book : " << orders[i].money << endl;}
-
-
-   cout <<"---------------------------------------------------" << endl;
-
-
-    while (true)
-    {
-     Printmenu();
-     int Useroption = Displayuseroption();
-     outputonuser(Useroption);
-        }
+    CSVReader reader;
+    orders = reader.readCSV("20223.csv");
 }
+
+
 
 
 void MerkelMain::Printmenu()
@@ -76,7 +57,28 @@ void MerkelMain::Invalidoption(){std::cout << "Invalid Input, Enter a number bet
 
 void MerkelMain::Helpguide(){std::cout << "Help - Your aim is to make money. Analyze the market and make bids and offers" << std::endl;}
 
-void MerkelMain::Exchangestats(){std::cout << "Order Book contains " << orders.size() << " entries" << std::endl;}
+void MerkelMain::Exchangestats()
+{
+    std::cout << "Order Book contains " << orders.size() << " entries" << std::endl;
+    unsigned int bids = 0;
+    unsigned int asks = 0;
+
+    for (const Cryptobook& e : orders)
+    {
+        if (e.ordertype == Typeoforder::ask)
+        {
+            asks++;
+        }
+
+        if (e.ordertype == Typeoforder::bid)
+        {
+            bids++;
+        }
+    }
+
+    std::cout << "The OrderBook contains " << bids << " bids and " << asks << " asks." << std::endl;
+}
+
 
 void MerkelMain::Offer(){std::cout << "Make an offer - Enter the amount" << std::endl;}
 
